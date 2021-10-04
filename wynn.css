@@ -1,0 +1,108 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background-color: #111;
+}
+
+body {
+  font-family: nunito, sans-serif;
+  color: #fff;
+}
+
+@font-face {
+  font-family: emoji;
+  src: url(Emoji.eot) format("embedded-opentype"),
+    url(Emoji.ttf) format("truetype"), url(Emoji.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+#quests {
+  position: relative;
+}
+
+.quest {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.3;
+  width: 15%;
+  min-width: 280px;
+  float: left;
+  box-sizing: border-box;
+  margin: 15px;
+  background: #110110;
+  border: 3px solid #2c0860;
+  box-shadow: 4px 0 0 #110110, -4px 0 #110110, 0 4px 0 #110110, 0 -4px 0 #110110;
+  color: #aaa;
+  text-shadow: 2px 2px 0 #2a2a2a;
+  padding: 8px;
+}
+
+#quest_title {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+}
+
+.quest-quantity {
+  color: #5f5;
+  text-shadow: 2px 2px 0 #153f15;
+}
+
+.emoji:before {
+  font-family: emoji !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 0.8em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.emoji-check:before {
+  content: "\2714"" ";
+  color: #5f5;
+  text-shadow: 2px 2px 0 #153f15;
+}
+
+.emoji-heart:before {
+  content: "\2764"" ";
+  color: rgb(255, 71, 71);
+  text-shadow: 1.5px 1.5px 0 #153f15;
+}
+
+.page-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 100px;
+  margin-top: 25px;
+}
+
+.search-bar {
+  background-image: url(searchicon.png);
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 98.8%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin: 0 15px 12px 15px;
+}
+
+.margin {
+  margin: 0 15px 12px 15px;
+}
+
+.bold {
+  font-weight: bold;
+}

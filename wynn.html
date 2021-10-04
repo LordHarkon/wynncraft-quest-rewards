@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wynncraft Quests</title>
+    <link rel="stylesheet" href="wynn.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1 class="page-title">Quests</h1>
+    <p class="margin bold">Rewards:</p>
+    <input
+      type="text"
+      class="search-bar"
+      id="search-bar"
+      onkeyup="searchReward()"
+      placeholder="Search for a reward..."
+    />
+    <!-- <p class="margin bold">Emeralds:</p>
+    <input
+      type="text"
+      class="search-bar"
+      id="search-bar"
+      onkeyup="searchReward()"
+      placeholder="Search for a reward..."
+    /> -->
+    <div id="quests"></div>
+    <script src="quests.js"></script>
+    <script>
+      for (let quest in quests) {
+        let rewardsElements = "";
+        quests[quest].forEach((reward) => {
+          rewardsElements += `
+            <p class="emoji emoji-${
+              reward.item.startsWith("Access to") ? "heart" : "check"
+            }">
+              ${
+                !reward.item.startsWith("Access to")
+                  ? `<strong class="quest-quantity">${reward.quantity}</strong> `
+                  : ""
+              }${reward.item}
+            </p>
+          `;
+        });
+        document.getElementById("quests").innerHTML += `
+          <div class="quest">
+            <p id="quest_title">${quest}</h4>
+            <div id="quest_rewards">
+              ${rewardsElements}
+            </ul>
+          </div>
+        `;
+      }
+
+      function searchReward() {
+        const input = document.getElementById("search-bar");
+        const questsDiv = document.getElementsByClassName("quest");
+        const rewardsDiv = document.getElementsByClassName("emoji");
+
+        for (let i = 0; i < questsDiv.length; i++) {
+          let element = questsDiv[i].innerText;
+          if (element.toUpperCase().includes(input.value.toUpperCase())) {
+            questsDiv[i].style.display = "";
+          } else {
+            questsDiv[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
